@@ -8,9 +8,9 @@ const Hero = () => {
       <Picture>
         <Source type="image/avif" srcSet={`${src.replace('.jpg', '.avif')} 1x, ${src.replace('.jpg', '@2x.avif')} 2x, ${src.replace('.jpg', '@3x.avif')} 3x`}/>
         <Source type="image/jpeg" srcSet={`${src} 1x, ${src.replace('.jpg', '@2x.jgp')} 2x, ${src.replace('.jpg', '@3x.jgp')} 3x`}/>
-        <HeroImage src={src} />
+        <HeroImage src={src} alt="Cute cat - first image"/>
       </Picture>
-      <Swoop src="/swoop.svg" />
+      <Swoop src="/swoop.svg" alt="fist image background - black"/>
     </Wrapper>
   );
 };
