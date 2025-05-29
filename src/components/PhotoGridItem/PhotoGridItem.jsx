@@ -17,7 +17,7 @@ const PhotoGridItem = ({ id, src, alt, tags }) => {
           <Image src={src} alt={alt}/>
         </Picture>
       </Anchor>
-      <Tags>
+      <Tags columns={tags.length}>
         {tags.map((tag) => (
           <Tag key={tag}>{tag}</Tag>
         ))}
@@ -46,17 +46,21 @@ const Picture = styled.picture``;
 const Source = styled.source``;
 
 const Tags = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 const Tag = styled.li`
+  display: inline;
   padding: 4px 8px;
   background: var(--color-gray-300);
   font-size: 0.875rem;
   font-weight: 475;
   color: var(--color-gray-800);
+  &:not(:last-of-type) {
+    margin-right: 8px;
+  }
 `;
 
 export default PhotoGridItem;
